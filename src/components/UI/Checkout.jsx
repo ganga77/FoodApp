@@ -23,7 +23,7 @@ export default function Checkout(){
         event.target.reset();
     }
 
-    return <Modal open={progress === 'checkout'}>
+    return <Modal open={progress === 'checkout'} onClose={hideCheckout}>
         <form onSubmit={handleSubmit}>
             <h2>Checkout</h2>
             <p>Total Amount : {currencyFormatter.format(cartTotal)}</p>

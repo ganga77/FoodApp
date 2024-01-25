@@ -11,7 +11,7 @@ export default function Cart(){
 
     const cartTotal = items.reduce((totalPrice, item) => totalPrice + item.quantity * item.price, 0)
 
-    return <Modal className="cart" open={progress === 'cart'}>
+    return <Modal className="cart" open={progress === 'cart'} onClose={progress === 'cart' ? hideCart : null}>
         <h2>Your Cart</h2>
         <ul>{items.map(item =>(
             <li key={item.id}>{item.name} - {item.quantity} x {currencyFormatter.format(item.price)}
